@@ -17,7 +17,11 @@
         (async function() {
             await cheerpjInit();
             cheerpjCreateDisplay(800, 600);
-            await cheerpjRunJar("/app/examples/browser/SwingHTMLBrowser.jar");
+            if(location.href.includes("github.io")) {
+                await cheerpjLoadJar("/app/CheerpJ-Wisp/examples/browser/SwingHTMLBrowser.jar");
+            } else {
+                await cheerpjRunJar("/app/examples/browser/SwingHTMLBrowser.jar");
+            }
         })()
     </script>
   </body>
