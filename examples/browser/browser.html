@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Browser</title>
+    <script src="https://cdn.jsdelivr.net/npm/libcurl.js@latest/libcurl.js" onload="libcurl.load_wasm('https://cdn.jsdelivr.net/npm/libcurl.js@latest/libcurl.wasm');"></script>
+    <script src="../../src/cheerpj-wisp.js"></script>
+    <script>
+        let cwisp = new CWisp("wss://nebulaproxy.io/wisp/", true)
+        cwisp.init()
+        cwisp.link()
+    </script>
+    <script src="https://cjrtnc.leaningtech.com/3.0/cj3loader.js"></script>
+  </head>
+  <body>
+    <script>
+        (async function() {
+            await cheerpjInit();
+            cheerpjCreateDisplay(800, 600);
+            await cheerpjRunJar("/app/examples/browser/SwingHTMLBrowser.jar");
+        })()
+    </script>
+  </body>
+</html>
